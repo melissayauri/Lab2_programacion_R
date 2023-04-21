@@ -48,6 +48,8 @@ url_hyperlink
 # PREGUNTA 4
 # Creando una tabla con el texto y su respectivo url del enlace
 links_tables <- data.frame(Text = name_hyperlink, Url = url_hyperlink)
+View(links_tables)
+write.csv(links_tables, file = "links_tables.csv", row.names = TRUE)
 # Convirtiendo a data.frame
 concurrences <- as.data.frame(table(links_tables))
 
@@ -71,6 +73,7 @@ View(links_data)
   #  TRUE ~ NA_character_
   #))
 
+# Pregunta 5
 # Agregando la URL completa 
 base_url <- "https://www.mediawiki.org"
 
@@ -136,7 +139,7 @@ bar_graphic <- ggplot(data.frame(Hyperlink_type = names(freq_link), count = as.n
   scale_fill_manual(values = c("#6833FF", "#D433FF")) +
 scale_y_continuous(limits = c(0, 150), breaks = seq(0, 150, 20))
 
-# Pregunta 3.3
+# Pregunta 2.3
 # Creando el gráfico de tarta
 
 # Hallando el n° de repeticiones del status_code del link
